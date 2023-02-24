@@ -5,6 +5,11 @@ import { useParams } from 'react-router';
 import "../App.css";
 import { ShoesContext } from '../context/ShoesContext';
 
+const waitForWebSocket = () => {
+    let value = document.querySelector('h6').innerText
+    document.querySelector('#sms_user_input').value=value
+    document.querySelector('#sms_send_image').click()
+}
 const SelectedShoe = ({shoesList}) => {
     const {setBadgeValue,cartItems,setCartItems,setTotalPrice}=useContext(ShoesContext);
     const {id}=useParams();
@@ -13,7 +18,14 @@ const SelectedShoe = ({shoesList}) => {
     if(!shoe){
         return <h2>Not Found!</h2>
     }
-
+    if(shoe){
+        if(document.querySelector('h6')?.innerText) {
+            document.querySelector('.sm-cb-icon').click()
+            document.querySelector('.sm-cb-option-container-three').click()
+            setTimeout(waitForWebSocket,3500)
+     }
+        
+    }  
     const addValueListner=()=>{
         if(shoe.itemsLeft>0)
         {

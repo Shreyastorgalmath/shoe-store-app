@@ -13,17 +13,17 @@ const Section = () => {
     return (
         <div className="section">
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="" element={<Home/>}/>
                 <Route path="/men-shoes" element={<Shoes shoesType={"Men"}/>}>
                     <Route path="/" element={<ShoesList shoesList={shoesList['men-shoes']} shoesType={"men-shoes"}/>}/>
                     <Route path=":id" element={<SelectedShoe shoesList={shoesList['men-shoes']}/>}/>
                 </Route>
                 <Route path="/women-shoes" element={<Shoes shoesType={"Women"}/>}>
-                    <Route path="/" element={<ShoesList shoesList={shoesList['women-shoes']} shoesType={"women-shoes"}/>}/>
+                    <Route path="" element={<ShoesList shoesList={shoesList['women-shoes']} shoesType={"women-shoes"}/>}/>
                     <Route path=":id" element={<SelectedShoe shoesList={shoesList['women-shoes']}/>}/>
                 </Route>
                 <Route path="/kids-shoes" element={<Shoes shoesType={"Kids"}/>}>
-                    <Route path="/" element={<ShoesList shoesList={shoesList['kids-shoes']} shoesType={"kids-shoes"}/>}/>
+                    <Route path="" element={<ShoesList shoesList={shoesList['kids-shoes']} shoesType={"kids-shoes"}/>}/>
                     <Route path=":id" element={<SelectedShoe shoesList={shoesList['kids-shoes']}/>}/>
                 </Route>
                 <Route path="/cart" element={<Cart/>}/>
